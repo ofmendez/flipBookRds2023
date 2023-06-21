@@ -1,6 +1,6 @@
 body {
-  width: 1920px;
-  height: 1080px;
+  width: 1080px;
+  height: 1920px;
   margin: 0;
   background-color: black;
 }
@@ -64,10 +64,10 @@ transform: translate(-1%, -1%);
 #over{
     position: absolute;
     z-index: 2;
-    right: 1405px;
+    right: 553px;
     /* bottom: 418px; */
     /* right: -30%; */
-    bottom: 57%;
+    bottom: 75%;
     width: 557px;
     height: 487px;
 }

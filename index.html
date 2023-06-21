@@ -122,15 +122,18 @@
       }
       
       $('#container').FlipBook({
-        pageCallback: preview,
-        pages: 11,
+        pdf: 'books/pdf/rdsVertical.pdf',
+
+        // pageCallback: preview,
+        // pages: 11,
         propertiesCallback: function(props) {
+          props.page.depth *= 0.7;
           props.sheet.color = 0x00000000;
           // props.sheet.color = 0x008080;
           // props.cover.padding = 0.002;
           props.cssLayersLoader = function (n, clb) {
             // if (!n) {
-              console.log("ES: ",n);
+              // console.log("ES: ",n);
               clb([{
                 css: [
 // '#over{',
@@ -141,20 +144,16 @@
 // 'width: 557px;',
 // 'height: 487px;',
 // '}'
-
-                
                   '.center-page {',
-                  // 'width: 800px',
-                  // 'height: 450px',
-                  'position: absolute;',
-                  'left: 50%;',
-                  'top: 89px;',
-                  'transform: translate(-50%, 0);',
+                    'position: absolute;',
+                    'left: 50%;',
+                    'top: 716px;',
+                    'transform: translate(-50%, 0);',
                   '}',
                   'iframe {',
-                  'width: 375px;',
-                  'height: 267px;',
-                  'border: 0;',
+                    'width: 680px;',
+                    'height: 475px;',
+                    'border: 0;',
                   '}'
                 ].join(''),
                 html: `<iframe ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="./books/html/rdshtml/video.html" allowfullscreen ></iframe>`,
@@ -164,6 +163,15 @@
             // }
           };
           return props;
+        },
+        controlsProps: {
+          downloadURL: 'books/pdf/FoxitPdfSdk.pdf',
+          actions: {
+            cmdSmartPan: {
+              enabled: true,
+              enabledInNarrow: true
+            }
+          }
         },
         template: {
           html: 'templates/default-book-view.html',
@@ -178,11 +186,15 @@
             }
           ],
           script: 'js/default-book-view.js'
-        }
+        },
+        pdfLinks: {
+          handler: function (type, destination) { // type: 'internal' (destination - page number), 'external' (destination - url)
+            return false; // true - prevent default handler, false - call default handler
+          }
+        },
       });
       // // }
 
     </script>
-
   </body>
 </html>
