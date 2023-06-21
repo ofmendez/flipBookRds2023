@@ -149,14 +149,20 @@
                     'left: 50%;',
                     'top: 716px;',
                     'transform: translate(-50%, 0);',
-                  '}',
-                  'iframe {',
+                    '}',
+                    ' #frameVideo{',
                     'width: 680px;',
                     'height: 475px;',
                     'border: 0;',
+                    '}',
+                    ' #frameGif1 {',
+                    // 'transform: translate(-50%, 50%);',
+                    'width: 1080px;',
+                    'height: 1920px;',
                   '}'
                 ].join(''),
-                html: `<iframe ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="./books/html/rdshtml/video.html" allowfullscreen ></iframe>`,
+                html: `<iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="./books/html/rdshtml/video.html" allowfullscreen ></iframe>
+               <iframe id="frameGif1" ${(n === 0) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif1.html"  ></iframe> `,
 
                 // html: '<video crossorigin="anonymous" id="over" controls > <source src="./video/testMac.mp4" type="video/mp4" /> </video>'
               }]);
@@ -165,7 +171,7 @@
           return props;
         },
         controlsProps: {
-          downloadURL: 'books/pdf/FoxitPdfSdk.pdf',
+          downloadURL: 'books/pdf/rdsVertical.pdf',
           actions: {
             cmdSmartPan: {
               enabled: true,
