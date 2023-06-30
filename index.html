@@ -144,6 +144,8 @@
 // 'width: 557px;',
 // 'height: 487px;',
 // '}'
+
+
                   '.center-page {',
                     'position: absolute;',
                     'left: 51%;',
@@ -159,6 +161,16 @@
                     // 'transform: translate(-50%, 50%);',
                     'width: 1080px;',
                     'height: 1920px;',
+                  '}',
+                  '@media only screen and(device-width: 414px) and(device-height: 896px) and(-webkit-device-pixel-ratio: 2) {',
+                  '  .center-page{',
+                  '      top:45%;',
+                  '  }',
+                  '}',
+                  '@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {',
+                  '  .center-page{',
+                  '      top:45%;',
+                  '  }',
                   '}'
                 ].join(''),
                 // html: `<iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="./books/html/rdshtml/video.html" allowfullscreen ></iframe>
