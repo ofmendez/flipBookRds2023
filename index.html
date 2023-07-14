@@ -37,80 +37,6 @@
     <script src="js/dist/3dflipbook.js"></script>
     <script type="text/javascript">
 
-      // Sample 0 {
-      // $('#container').FlipBook({
-      //   // pdf: 'books/pdf/FoxitPdfSdk.pdf',
-      //   // pdf: 'books/pdf/Libro-Daniel-horizontal.pdf',
-      //   pdf: 'books/pdf/Libro-Robert.pdf',
-      //   template: {
-      //     html: 'templates/default-book-view.html',
-      //     styles: [
-      //       'css/short-black-book-view.css'
-      //     ],
-      //     links: [
-      //       {
-      //         rel: 'stylesheet',
-      //         href: 'css/font-awesome.min.css'
-      //       }
-      //     ],
-      //     script: 'js/default-book-view.js'
-      //   }
-      // });
-      // }
-
-      // Sample 1 {
-      // function theKingIsBlackPageCallback(n) {
-      //   return {
-      //     type: 'image',
-      //     src: 'books/image/rds/'+(n+1)+'.jpg',
-      //     interactive: false
-      //   };
-      // }
-
-      // $('#container').FlipBook({
-      //   pageCallback: theKingIsBlackPageCallback,
-      //   pages: 40,
-      //   propertiesCallback: function(props) {
-      //     props.cover.color = 0x000000;
-      //     props.cssLayersLoader = function (n, clb) {
-      //       if (!n) {
-      //         clb([{
-      //           css: [
-      //             '.center-page {',
-      //             'position: absolute;',
-      //             'left: 50%;',
-      //             'top: 50px;',
-      //             'transform: translate(-50%, 0);',
-      //             '}',
-      //             'iframe {',
-      //             'border: 0;',
-      //             '}'
-      //           ].join(''),
-      //           html: '<iframe class="center-page" src="https://www.youtube.com/embed/0vrdgDdPApQ" allowfullscreen width="800" height="450"></iframe>'
-      //         }]);
-      //       }
-      //     };
-      //     return props;
-      //   },
-      //   template: {
-      //     html: 'templates/default-book-view.html',
-      //     styles: [
-      //       'css/short-white-book-view.css'
-      //     ],
-      //     links: [
-      //       {
-      //         rel: 'stylesheet',
-      //         href: 'css/font-awesome.min.css'
-      //       }
-      //     ],
-      //     script: 'js/default-book-view.js',
-      //     sounds: {
-      //       startFlip: 'sounds/start-flip.mp3',
-      //       endFlip: 'sounds/end-flip.mp3'
-      //     }
-      //   }
-      // });
-      // }
 
       // // Sample 2 {
       function preview(n) {
@@ -124,28 +50,12 @@
       $('#container').FlipBook({
         pdf: 'books/pdf/rdsVertical2.pdf',
 
-        // pageCallback: preview,
-        // pages: 11,
         propertiesCallback: function(props) {
           props.page.depth *= 0.7;
           props.sheet.color = 0x00000000;
-          // props.sheet.color = 0x008080;
-          // props.cover.padding = 0.002;
           props.cssLayersLoader = function (n, clb) {
-            // if (!n) {
-              // console.log("ES: ",n);
               clb([{
                 css: [
-// '#over{',
-// 'position: absolute;',
-// 'z- index: 2;',
-// 'right: 327px;',
-// 'bottom: 418px;',
-// 'width: 557px;',
-// 'height: 487px;',
-// '}'
-
-
                   '.center-page {',
                     'position: absolute;',
                     'left: 51%;',
@@ -158,7 +68,6 @@
                     'border: 0;',
                     '}',
                     ' #frameGif1 {',
-                    // 'transform: translate(-50%, 50%);',
                     'width: 1080px;',
                     'height: 1920px;',
                     'border-width: 0px;',
@@ -175,11 +84,11 @@
                   '}'
                 ].join(''),
                 // html: `<iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="./books/html/rdshtml/video.html" allowfullscreen ></iframe>
-                html: `<iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="https://www.youtube.com/embed/rAn7hQNI-Yk" allowfullscreen ></iframe>
+                html: `
+                <iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="https://www.youtube.com/embed/rAn7hQNI-Yk" allowfullscreen ></iframe>
                 <iframe id="frameGif1" ${(n === 0) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif1.html"  ></iframe> 
-                <iframe id="frameGif1" ${(n === 12) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif2.html"  ></iframe> `,
-
-                // html: '<video crossorigin="anonymous" id="over" controls > <source src="./video/testMac.mp4" type="video/mp4" /> </video>'
+                <iframe id="frameGif1" ${(n === 12) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif2.html"  ></iframe> 
+                `,
               }]);
             // }
           };
