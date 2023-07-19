@@ -37,77 +37,49 @@
     <script src="js/dist/3dflipbook.js"></script>
     <script type="text/javascript">
 
-
-      // // Sample 2 {
-      function preview(n) {
+// Sample 1 {
+      function theKingIsBlackPageCallback(n) {
         return {
-          type: 'html',
-          src: 'books/html/rdshtml/'+(n+1)+'.html',
-          interactive: true
+          type: 'image',
+          src: 'books/image/rds/13b.jpg',
+          interactive: false
         };
       }
-      
-      $('#container').FlipBook({
-        pdf: 'books/pdf/rdsVertical2.pdf',
 
+      $('#container').FlipBook({
+        pageCallback: theKingIsBlackPageCallback,
+        pages: 1,
         propertiesCallback: function(props) {
-          props.page.depth *= 0.7;
-          props.sheet.color = 0x00000000;
+          props.cover.color = 0x000000;
           props.cssLayersLoader = function (n, clb) {
+            if (!n) {
               clb([{
                 css: [
                   '.center-page {',
-                    'position: absolute;',
-                    'left: 51%;',
-                    'top: 39%;',//716px;',
-                    'transform: translate(-50%, 0);',
-                    '}',
-                    ' #frameVideo{',
-                    'width: 630px;',
-                    'height: 475px;',
-                    'border: 0;',
-                    '}',
-                    ' #frameGif1 {',
-                    'width: 1080px;',
-                    'height: 1920px;',
-                    'border-width: 0px;',
+                  'position: absolute;',
+                  'left: 50%;',
+                  'top: 50px;',
+                  'transform: translate(-50%, 0);',
                   '}',
-                  '@media only screen and(device-width: 414px) and(device-height: 896px) {',
-                  '  .center-page{',
-                  '      top:45%;',
-                  '  }',
-                  '}',
-                  '@media only screen and (device-width: 375px) and (device-height: 812px)  {',
-                  '  .center-page{',
-                  '      top:45%;',
-                  '  }',
+                  '#frameGif1 {',
+                  'border: 0;',
+                  'width: 299;',
+                  'height: 299;',
                   '}'
                 ].join(''),
-                // html: `<iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="./books/html/rdshtml/video.html" allowfullscreen ></iframe>
                 html: `
-                <iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="https://www.youtube.com/embed/rAn7hQNI-Yk" allowfullscreen ></iframe>
-                <iframe id="frameGif1" ${(n === 0) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif1.html"  ></iframe> 
-                <iframe id="frameGif1" ${(n === 12) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif2.html"  ></iframe> 
-                `,
+                <iframe id="frameGif1" class="center-page" ${(n === 0) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif13b.html"  ></iframe> 
+
+                `
               }]);
-            // }
+            }
           };
           return props;
-        },
-        controlsProps: {
-          downloadURL: 'books/pdf/rdsVertical.pdf',
-          actions: {
-            cmdSmartPan: {
-              enabled: true,
-              enabledInNarrow: true
-            }
-          }
         },
         template: {
           html: 'templates/default-book-view.html',
           styles: [
             'css/short-white-book-view.css'
-            // 'css/black-book-view.css'
           ],
           links: [
             {
@@ -115,14 +87,100 @@
               href: 'css/font-awesome.min.css'
             }
           ],
-          script: 'js/default-book-view.js'
-        },
-        pdfLinks: {
-          handler: function (type, destination) { // type: 'internal' (destination - page number), 'external' (destination - url)
-            return false; // true - prevent default handler, false - call default handler
+          script: 'js/default-book-view.js',
+          sounds: {
+            startFlip: 'sounds/start-flip.mp3',
+            endFlip: 'sounds/end-flip.mp3'
           }
-        },
+        }
       });
+      // }
+
+      // // Sample 2 {
+      // function preview(n) {
+      //   return {
+      //     type: 'html',
+      //     src: 'books/html/rdshtml/'+(n+1)+'.html',
+      //     interactive: true
+      //   };
+      // }
+      
+      // $('#container').FlipBook({
+      //   pdf: 'books/pdf/rdsVertical2.pdf',
+
+      //   propertiesCallback: function(props) {
+      //     props.page.depth *= 0.7;
+      //     props.sheet.color = 0x00000000;
+      //     props.cssLayersLoader = function (n, clb) {
+      //         clb([{
+      //           css: [
+      //             '.center-page {',
+      //               'position: absolute;',
+      //               'left: 51%;',
+      //               'top: 39%;',//716px;',
+      //               'transform: translate(-50%, 0);',
+      //               '}',
+      //               ' #frameVideo{',
+      //               'width: 630px;',
+      //               'height: 475px;',
+      //               'border: 0;',
+      //               '}',
+      //               ' #frameGif1 {',
+      //               'width: 1080px;',
+      //               'height: 1920px;',
+      //               'border-width: 0px;',
+      //             '}',
+      //             '@media only screen and(device-width: 414px) and(device-height: 896px) {',
+      //             '  .center-page{',
+      //             '      top:45%;',
+      //             '  }',
+      //             '}',
+      //             '@media only screen and (device-width: 375px) and (device-height: 812px)  {',
+      //             '  .center-page{',
+      //             '      top:45%;',
+      //             '  }',
+      //             '}'
+      //           ].join(''),
+      //           // html: `<iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="./books/html/rdshtml/video.html" allowfullscreen ></iframe>
+      //           html: `
+      //           <iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="https://www.youtube.com/embed/rAn7hQNI-Yk" allowfullscreen ></iframe>
+      //           <iframe id="frameGif1" ${(n === 0) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif1.html"  ></iframe> 
+      //           <iframe id="frameGif1" ${(n === 12) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif2.html"  ></iframe> 
+      //           `,
+      //         }]);
+      //       // }
+      //     };
+      //     return props;
+      //   },
+      //   controlsProps: {
+      //     downloadURL: 'books/pdf/rdsVertical.pdf',
+      //     actions: {
+      //       cmdSmartPan: {
+      //         enabled: true,
+      //         enabledInNarrow: true
+      //       }
+      //     }
+      //   },
+      //   template: {
+      //     html: 'templates/default-book-view.html',
+      //     styles: [
+      //       'css/short-white-book-view.css'
+      //       // 'css/black-book-view.css'
+      //     ],
+      //     links: [
+      //       {
+      //         rel: 'stylesheet',
+      //         href: 'css/font-awesome.min.css'
+      //       }
+      //     ],
+      //     script: 'js/default-book-view.js'
+      //   },
+      //   pdfLinks: {
+      //     handler: function (type, destination) { // type: 'internal' (destination - page number), 'external' (destination - url)
+      //       return false; // true - prevent default handler, false - call default handler
+      //     }
+      //   },
+      // });
       // // }
 
     </script>
