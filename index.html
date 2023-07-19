@@ -48,7 +48,7 @@
       }
       
       $('#container').FlipBook({
-        pdf: 'books/pdf/rdsVertical2.pdf',
+        pdf: 'books/pdf/PowerBI.pdf',
 
         propertiesCallback: function(props) {
           props.page.depth *= 0.7;
@@ -84,11 +84,7 @@
                   '}'
                 ].join(''),
                 // html: `<iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="./books/html/rdshtml/video.html" allowfullscreen ></iframe>
-                html: `
-                <iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="https://www.youtube.com/embed/rAn7hQNI-Yk" allowfullscreen ></iframe>
-                <iframe id="frameGif1" ${(n === 0) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif1.html"  ></iframe> 
-                <iframe id="frameGif1" ${(n === 12) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif2.html"  ></iframe> 
-                `,
+                html: ` `,
               }]);
             // }
           };
