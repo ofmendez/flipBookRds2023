@@ -1,0 +1,189 @@
+  <style>
+    body {
+      margin: 0;
+    }
+    #container{
+
+    }
+    img{
+      border: 0;
+      /* transform: translate( 19%, 82%); */
+    }
+    #img2-0{
+      width: 80%;
+      transform: translate(-30%, 0);
+    }
+    #img2-1{
+      width: 20%;
+      transform: translate(-30%, 0);
+    }
+    #img2-2{
+      width: 110%;
+      transform: translate(-20%, 42%);
+    }
+    #img3-0{
+      width: 20%;
+      transform: translate(260%, -64%);
+    }
+    #img3-1{
+      width: 53%;
+      transform: translate(-71%, 105%);
+    }
+    #img3-2{
+      width: 87%;
+      transform: translate(55%, 98%);
+    }
+    #img4-0{
+      width: 30%;
+    }
+    #img4-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img4-2{
+      width: 30%;
+      transform: translate(50%, 80%);
+    }
+    #img5-0{
+      width: 30%;
+    }
+    #img5-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img5-2{
+      width: 30%;
+      transform: translate(50%, 80%);
+    }
+    #img6-0{
+      width: 30%;
+    }
+    #img6-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img6-2{
+      width: 30%;
+      transform: translate(50%, 80%);
+    }
+    #img7-0{
+      width: 30%;
+    }
+    #img7-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img7-2{
+      width: 30%;
+      transform: translate(50%, 80%);
+    }
+    #img8-0{
+      width: 30%;
+    }
+    #img8-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img8-2{
+      width: 30%;
+      transform: translate(50%, 80%);
+    }
+    #img9-0{
+      width: 30%;
+    }
+    #img9-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img9-2{
+      width: 30%;
+      transform: translate(50%, 80%);
+    }
+    #img10-0{
+      width: 30%;
+    }
+    #img10-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img10-2{
+      width: 30%;
+      transform: translate(50%, 80%);
+    }
+    #img11-0{
+      width: 30%;
+    }
+    #img11-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img11-2{
+      width: 30%;
+      transform: translate(50%, 80%);
+    }
+    #img12-0{
+      width: 30%;
+    }
+    #img12-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img12-2{
+      width: 30%;
+      transform: translate(50%, 80%);
+    }
+    #img13-0{
+      width: 30%;
+    }
+    #img13-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img13-2{
+      width: 30%;
+      transform: translate(50%, 80%);
+    }
+    /* #img14-0{
+      width: 30%;
+    }
+    #img14-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img14-2{
+      width: 30%;
+      transform: translate(50%, 80%);
+    }
+    #img15-0{
+      width: 30%;
+    }
+    #img15-1{
+      width: 20%;
+      transform: translate(-50%, 0);
+    }
+    #img15-2{
+      width: 30%;
+      transform: translate(50%, 80%); */
+    /* } */
+  </style>
+    <div id="container">
+      <!-- <video width="680" height="475" controls  src="./video/video2.m4v"></video> -->
+    </div>
+  <script>
+      const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+      });
+      // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+      let gId = parseInt( params.gId)+1;
+      let container =document.getElementById("container");
+      if(!(gId===1 || gId===14 || gId ===15)){
+        for (let n = 0; n < 3; n++) {
+          if(gId>3) continue;
+          const el = document.createElement('img');
+          container.appendChild(el);
+          el.id = `img${gId}-${n}`;
+          el.src = "./gif/"+gId+"-"+n+".gif";
+        }
+      }
+  </script>
+

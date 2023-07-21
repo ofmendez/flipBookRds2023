@@ -48,7 +48,7 @@
       }
       
       $('#container').FlipBook({
-        pdf: 'books/pdf/rdsVertical2.pdf',
+        pdf: 'books/pdf/book3.pdf',
 
         propertiesCallback: function(props) {
           props.page.depth *= 0.7;
@@ -58,19 +58,19 @@
                 css: [
                   '.center-page {',
                     'position: absolute;',
-                    'left: 51%;',
-                    'top: 39%;',//716px;',
+                    'left: 50%;',
+                    'top: 15.5%;',//716px;',
+                    'border: 0;',//716px;',
                     'transform: translate(-50%, 0);',
-                    '}',
-                    ' #frameVideo{',
-                    'width: 630px;',
-                    'height: 475px;',
+                  '}',
+                  ' #frameVideo{',
+                    'width: 620px;',
+                    'height: 460px;',
                     'border: 0;',
-                    '}',
-                    ' #frameGif1 {',
-                    'width: 1080px;',
-                    'height: 1920px;',
-                    'border-width: 0px;',
+                  '}',
+                  ' iframe {',
+                    'width: 100%;',
+                    'height: 100%;',
                   '}',
                   '@media only screen and(device-width: 414px) and(device-height: 896px) {',
                   '  .center-page{',
@@ -84,10 +84,12 @@
                   '}'
                 ].join(''),
                 // html: `<iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="./books/html/rdshtml/video.html" allowfullscreen ></iframe>
+                // <iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="https://www.youtube.com/embed/rAn7hQNI-Yk" allowfullscreen ></iframe>
+                // <iframe id="frameGif1" ${(n === 0) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif1.html"  ></iframe> 
+                // <iframe id="frameGif1" ${(n === 12) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif2.html"  ></iframe> 
                 html: `
-                <iframe id="frameVideo" ${(n===3)?"": "hidden"} scrolling="no" class="center-page" src="https://www.youtube.com/embed/rAn7hQNI-Yk" allowfullscreen ></iframe>
-                <iframe id="frameGif1" ${(n === 0) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif1.html"  ></iframe> 
-                <iframe id="frameGif1" ${(n === 12) ? "" : "hidden"} scrolling="no"  src="./books/html/rdshtml/gif2.html"  ></iframe> 
+                <iframe class="center-page" ${(n===14)?"": "hidden"}   id="frameVideo"  scrolling="no" src="./books/html/rdshtml/video.html" allowfullscreen ></iframe>
+                <iframe class="" ${(n===14 || n===0)?"hidden": ""} scrolling="no" src="./books/html/rdshtml/gifbby.html?gId=${n}" allowfullscreen ></iframe>
                 `,
               }]);
             // }
