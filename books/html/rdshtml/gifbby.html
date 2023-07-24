@@ -34,121 +34,129 @@
       transform: translate(55%, 98%);
     }
     #img4-0{
-      width: 30%;
+      width: 130%;
+      transform: translate(-69%, 54px);
     }
     #img4-1{
-      width: 20%;
-      transform: translate(-50%, 0);
+      width: 15%;
+      transform: translate(231%, -415%);
     }
     #img4-2{
-      width: 30%;
-      transform: translate(50%, 80%);
+      width: 75%;
+      transform: translate(29%, -42%);
     }
     #img5-0{
-      width: 30%;
+      width: 59%;
+      transform: translate(-28%, 130%);
     }
     #img5-1{
-      width: 20%;
-      transform: translate(-50%, 0);
+      width: 23%;
+      transform: translate(64%, 138%);
     }
     #img5-2{
-      width: 30%;
-      transform: translate(50%, 80%);
+      width: 87%;
+      transform: translate(31%, 36%);
     }
     #img6-0{
-      width: 30%;
+      width: 24%;
+      transform: translate(-36%, 58%);
     }
     #img6-1{
-      width: 20%;
-      transform: translate(-50%, 0);
+      width: 70%;
+      transform: translate(27%, 0%);
     }
     #img6-2{
-      width: 30%;
-      transform: translate(50%, 80%);
+      width: 57%;
+      transform: translate(-38%, 82%);
     }
     #img7-0{
-      width: 30%;
+      width: 22%;
+      transform: translate(79%, -4%);
     }
     #img7-1{
-      width: 20%;
-      transform: translate(-50%, 0);
+      width: 65%;
+      transform: translate(-82%, 123%);
     }
     #img7-2{
-      width: 30%;
+      width: 83%;
       transform: translate(50%, 80%);
     }
     #img8-0{
-      width: 30%;
+      width: 40%;
+      transform: translate(-36%, -46%);
     }
     #img8-1{
-      width: 20%;
-      transform: translate(-50%, 0);
+      width: 22%;
+      transform: translate(-187%, 372%);
     }
     #img8-2{
-      width: 30%;
-      transform: translate(50%, 80%);
+      width: 69%;
+      transform: translate(6%, 125%);
     }
     #img9-0{
-      width: 30%;
+      width: 50%;
+      transform: translate(-38%, 28%);
     }
     #img9-1{
-      width: 20%;
-      transform: translate(-50%, 0);
+      width: 19%;
+      transform: translate(191%, -53%);
     }
     #img9-2{
-      width: 30%;
-      transform: translate(50%, 80%);
+      width: 32%;
+      transform: translate(108%, 72%);
     }
     #img10-0{
-      width: 30%;
+      width: 16%;
+      transform: translate( 481%, 238%);
     }
     #img10-1{
-      width: 20%;
-      transform: translate(-50%, 0);
+      width: 24%;
+      transform: translate( 66%, 322%);
     }
     #img10-2{
-      width: 30%;
-      transform: translate(50%, 80%);
+      width: 79%;
+      transform: translate(68%, 155%);
     }
     #img11-0{
-      width: 30%;
+      width: 15%;
+      transform: translate(463%, 25%);
     }
     #img11-1{
-      width: 20%;
-      transform: translate(-50%, 0);
+      width: 54%;
+      transform: translate(-58%, 172%);
     }
     #img11-2{
-      width: 30%;
-      transform: translate(50%, 80%);
+      width: 72%;
+      transform: translate(71%, 23%);
     }
     #img12-0{
-      width: 30%;
+      width: 46%;
+      transform: translate( 98%, -38%);
     }
     #img12-1{
-      width: 20%;
-      transform: translate(-50%, 0);
+      width: 49%;
+      transform: translate(-131%, 108%);
     }
     #img12-2{
-      width: 30%;
-      transform: translate(50%, 80%);
+      width: 17%;
+      transform: translate(481%, 26%);
     }
     #img13-0{
-      width: 30%;
+      width: 53%;
+      transform: translate( 100%, 202%);
     }
     #img13-1{
-      width: 20%;
-      transform: translate(-50%, 0);
+      display: none;
     }
     #img13-2{
-      width: 30%;
-      transform: translate(50%, 80%);
+      display: none;
     }
     /* #img14-0{
       width: 30%;
     }
     #img14-1{
       width: 20%;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, 0%);
     }
     #img14-2{
       width: 30%;
@@ -159,7 +167,7 @@
     }
     #img15-1{
       width: 20%;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, 0%);
     }
     #img15-2{
       width: 30%;
@@ -178,7 +186,7 @@
       let container =document.getElementById("container");
       if(!(gId===1 || gId===14 || gId ===15)){
         for (let n = 0; n < 3; n++) {
-          if(gId>3) continue;
+          // if(gId>5) continue;
           const el = document.createElement('img');
           container.appendChild(el);
           el.id = `img${gId}-${n}`;
